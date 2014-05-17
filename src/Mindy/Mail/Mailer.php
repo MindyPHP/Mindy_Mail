@@ -119,7 +119,7 @@ class Mailer extends Object implements MailerInterface
     /**
      * @var string message default class name.
      */
-    public $messageClass = 'yii\swiftmailer\Message';
+    public $messageClass = '\Mindy\Mail\Message';
     /**
      * @var \Swift_Mailer Swift mailer instance.
      */
@@ -130,6 +130,11 @@ class Mailer extends Object implements MailerInterface
     private $_transport = [];
 
     public $defaultFrom;
+
+    /**
+     * @var \Mindy\Mail\Message[] Outcoming messages
+     */
+    public $out = [];
 
     /**
      * @return array|\Swift_Mailer Swift mailer instance or array configuration.
@@ -177,8 +182,9 @@ class Mailer extends Object implements MailerInterface
         if (is_array($address)) {
             $address = implode(', ', array_keys($address));
         }
-        Yii::info('Sending email "' . $message->getSubject() . '" to "' . $address . '"', __METHOD__);
+        // TODO Yii::info('Sending email "' . $message->getSubject() . '" to "' . $address . '"', __METHOD__);
 
+        $this->out[] = $message;
         return $this->getSwiftMailer()->send($message->getSwiftMessage()) > 0;
     }
 
@@ -352,7 +358,7 @@ class Mailer extends Object implements MailerInterface
         if (is_array($address)) {
             $address = implode(', ', array_keys($address));
         }
-        Yii::info('Sending email "' . $message->getSubject() . '" to "' . $address . '"', __METHOD__);
+        // TODO Yii::info('Sending email "' . $message->getSubject() . '" to "' . $address . '"', __METHOD__);
         return $this->useFileTransport ? $this->saveMessage($message) : $this->sendMessage($message);
     }
 

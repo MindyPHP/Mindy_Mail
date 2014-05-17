@@ -25,6 +25,12 @@ use Mindy\Core\Object;
 class Message extends Object
 {
     /**
+     * @var MailerInterface the mailer instance that created this message.
+     * For independently created messages this is `null`.
+     */
+    public $mailer;
+
+    /**
      * @var \Swift_Message Swift message instance.
      */
     private $_swiftMessage;
@@ -314,5 +320,20 @@ class Message extends Object
     protected function createSwiftMessage()
     {
         return new \Swift_Message();
+    }
+
+    /**
+     * Sends this email message.
+     * @param MailerInterface $mailer the mailer that should be used to send this message.
+     * If no mailer is given it will first check if [[mailer]] is set and if not,
+     * the "mail" application component will be used instead.
+     * @return boolean whether this message is sent successfully.
+     */
+    public function send(MailerInterface $mailer = null)
+    {
+        if ($mailer === null) {
+            $mailer = $this->mailer;
+        }
+        return $mailer->send($this);
     }
 }

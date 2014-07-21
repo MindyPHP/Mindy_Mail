@@ -7,9 +7,10 @@
 
 namespace Mindy\Mail;
 
-use Mindy\Core\Object;
 use Mindy\Exception\InvalidConfigException;
 use Mindy\Helper\Creator;
+use Mindy\Helper\Traits\Accessors;
+use Mindy\Helper\Traits\Configurator;
 use Mindy\Utils\RenderTrait;
 
 /**
@@ -74,9 +75,9 @@ use Mindy\Utils\RenderTrait;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-class Mailer extends Object implements MailerInterface
+class Mailer implements MailerInterface
 {
-    use RenderTrait;
+    use Accessors, Configurator, RenderTrait;
 
     /**
      * @var array the configuration that should be applied to any newly created

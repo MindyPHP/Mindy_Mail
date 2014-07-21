@@ -6,8 +6,9 @@
  */
 
 namespace Mindy\Mail;
+use Mindy\Helper\Traits\Accessors;
+use Mindy\Helper\Traits\Configurator;
 
-use Mindy\Core\Object;
 
 /**
  * Message implements a message class based on SwiftMailer.
@@ -22,8 +23,10 @@ use Mindy\Core\Object;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-class Message extends Object
+class Message
 {
+    use Accessors, Configurator;
+
     /**
      * @var MailerInterface the mailer instance that created this message.
      * For independently created messages this is `null`.

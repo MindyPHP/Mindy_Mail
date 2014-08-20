@@ -8,6 +8,7 @@
 namespace Mindy\Mail;
 
 use Mindy\Exception\InvalidConfigException;
+use Mindy\Helper\Alias;
 use Mindy\Helper\Creator;
 use Mindy\Helper\Traits\Accessors;
 use Mindy\Helper\Traits\Configurator;
@@ -404,7 +405,7 @@ class Mailer implements MailerInterface
      */
     protected function saveMessage($message)
     {
-        $path = Yii::getPathOfAlias($this->fileTransportPath);
+        $path = Alias::get($this->fileTransportPath);
         if (!is_dir(($path))) {
             mkdir($path, 0777, true);
         }

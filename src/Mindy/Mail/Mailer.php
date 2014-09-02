@@ -105,7 +105,7 @@ class Mailer implements MailerInterface
     /**
      * @var string the directory where the email messages are saved when [[useFileTransport]] is true.
      */
-    public $fileTransportPath = '@runtime/mail';
+    public $fileTransportPath = 'application.runtime.mail';
     /**
      * @var callable a PHP callback that will be called by [[send()]] when [[useFileTransport]] is true.
      * The callback should return a file name which will be used to save the email message.
@@ -301,13 +301,13 @@ class Mailer implements MailerInterface
             $params['message'] = $message;
             if (is_array($view)) {
                 if (isset($view['html'])) {
-                    $html = $this->render($view['html'], $params);
+                    $html = $this->renderTemplate($view['html'], $params);
                 }
                 if (isset($view['text'])) {
-                    $text = $this->render($view['text'], $params);
+                    $text = $this->renderTemplate($view['text'], $params);
                 }
             } else {
-                $html = $this->render($view, $params);
+                $html = $this->renderTemplate($view, $params);
             }
             if (isset($html)) {
                 $message->setHtmlBody($html);
@@ -387,18 +387,6 @@ class Mailer implements MailerInterface
     }
 
     /**
-     * Renders the specified view with optional parameters and layout.
-     * The view will be rendered using the [[view]] component.
-     * @param string $view the view name or the path alias of the view file.
-     * @param null $data the parameters (name-value pairs) that will be extracted and made available in the view file.
-     * @return string the rendering result.
-     */
-    public function render($view, $data = null)
-    {
-        return is_file($view) ? $this->renderTemplate($view, $data) : $this->renderString($view, $data);
-    }
-
-    /**
      * Saves the message as a file under [[fileTransportPath]].
      * @param MessageInterface $message
      * @return boolean whether the message is saved successfully
@@ -406,7 +394,7 @@ class Mailer implements MailerInterface
     protected function saveMessage($message)
     {
         $path = Alias::get($this->fileTransportPath);
-        if (!is_dir(($path))) {
+        if ($path && !is_dir(($path))) {
             mkdir($path, 0777, true);
         }
         if ($this->fileTransportCallback !== null) {

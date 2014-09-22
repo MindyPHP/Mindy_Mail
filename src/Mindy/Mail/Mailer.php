@@ -360,8 +360,13 @@ class Mailer implements MailerInterface
         if (is_array($address)) {
             $address = implode(', ', array_keys($address));
         }
-        // TODO Yii::info('Sending email "' . $message->getSubject() . '" to "' . $address . '"', __METHOD__);
+        $this->getLogger()->info('Sending email "' . $message->getSubject() . '" to "' . $address . '"', __METHOD__);
         return $this->useFileTransport ? $this->saveMessage($message) : $this->sendMessage($message);
+    }
+
+    public function getLogger()
+    {
+        return \Mindy\Base\Mindy::app()->logger;
     }
 
     /**

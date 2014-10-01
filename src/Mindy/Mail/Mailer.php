@@ -146,7 +146,6 @@ class Mailer implements MailerInterface
         if (!is_object($this->_swiftMailer)) {
             $this->_swiftMailer = $this->createSwiftMailer();
         }
-
         return $this->_swiftMailer;
     }
 
@@ -184,8 +183,7 @@ class Mailer implements MailerInterface
         if (is_array($address)) {
             $address = implode(', ', array_keys($address));
         }
-        // TODO Yii::info('Sending email "' . $message->getSubject() . '" to "' . $address . '"', __METHOD__);
-
+        $this->getLogger()->info('Sending email "' . $message->getSubject() . '" to "' . $address . '"', __METHOD__);
         $this->out[] = $message;
         return $this->getSwiftMailer()->send($message->getSwiftMessage()) > 0;
     }
@@ -224,7 +222,6 @@ class Mailer implements MailerInterface
                 $transport->registerPlugin($plugin);
             }
         }
-
         return $transport;
     }
 
@@ -270,7 +267,6 @@ class Mailer implements MailerInterface
                 }
             }
         }
-
         return $object;
     }
 

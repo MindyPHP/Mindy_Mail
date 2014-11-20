@@ -183,7 +183,7 @@ class Mailer implements MailerInterface
         if (is_array($address)) {
             $address = implode(', ', array_keys($address));
         }
-        $this->getLogger()->info('Sending email "' . $message->getSubject() . '" to "' . $address . '"', __METHOD__);
+        $this->getLogger()->info('Sending email "' . $message->getSubject() . '" to "' . $address . '"', [], __METHOD__);
         $this->out[] = $message;
         return $this->getSwiftMailer()->send($message->getSwiftMessage()) > 0;
     }
@@ -356,7 +356,7 @@ class Mailer implements MailerInterface
         if (is_array($address)) {
             $address = implode(', ', array_keys($address));
         }
-        $this->getLogger()->info('Sending email "' . $message->getSubject() . '" to "' . $address . '"', __METHOD__);
+        $this->getLogger()->info('Sending email "' . $message->getSubject() . '" to "' . $address . '"', [], __METHOD__);
         return $this->useFileTransport ? $this->saveMessage($message) : $this->sendMessage($message);
     }
 

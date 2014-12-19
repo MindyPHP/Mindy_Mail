@@ -318,7 +318,7 @@ class Mailer implements MailerInterface
                 $message->setTextBody(strip_tags($html));
             }
         }
-        if($this->defaultFrom) {
+        if ($this->defaultFrom) {
             $message->setFrom($this->defaultFrom);
         }
         return $message;

@@ -5,16 +5,16 @@
     "version": "0.1",
     "license": "MIT",
     "autoload": {
-        "psr-0": {
-            "": "src/"
+        "psr-4": {
+            "Mindy\\Mail\\": "src/Mindy/Mail"
         }
     },
     "require": {
         "php": ">=5.4",
-        "mindy/logger": "dev-master",
-        "mindy/helper": "dev-master",
+        "mindy/logger": "0.1",
+        "mindy/helper": "0.1",
         "swiftmailer/swiftmailer": "@stable",
-        "mindy/utils": "dev-master"
+        "mindy/utils": "0.1"
     },
     "require-dev": {
         "satooshi/php-coveralls": "dev-master"

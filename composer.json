@@ -11,7 +11,7 @@
     },
     "require": {
         "php": ">=5.4",
-        "mindy/logger": "0.*",
+        "mindy/logger": "1.*",
         "mindy/helper": "0.*",
         "swiftmailer/swiftmailer": "@stable",
         "mindy/utils": "0.*"

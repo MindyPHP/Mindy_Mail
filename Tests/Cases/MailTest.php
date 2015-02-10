@@ -1,9 +1,9 @@
 <?php
 /**
- * 
+ *
  *
  * All rights reserved.
- * 
+ *
  * @author Falaleev Maxim
  * @email max@studio107.ru
  * @version 1.0
@@ -12,7 +12,7 @@
  * @date 17/05/14.05.2014 13:58
  */
 
-class MailTest extends TestCase
+class MailTest extends \Tests\TestCase
 {
     public function testMail()
     {

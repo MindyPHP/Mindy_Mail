@@ -2,7 +2,7 @@
     "name": "mindy/mail",
     "homepage": "https://github.com/studio107/Mindy_Mail",
     "type": "library",
-    "version": "0.1",
+    "version": "0.2",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -11,10 +11,10 @@
     },
     "require": {
         "php": ">=5.4",
-        "mindy/logger": "0.1",
-        "mindy/helper": "0.1",
+        "mindy/logger": "0.*",
+        "mindy/helper": "0.*",
         "swiftmailer/swiftmailer": "@stable",
-        "mindy/utils": "0.1"
+        "mindy/utils": "0.*"
     },
     "require-dev": {
         "satooshi/php-coveralls": "dev-master"

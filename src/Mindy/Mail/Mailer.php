@@ -1,9 +1,4 @@
 <?php
-/**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
 
 namespace Mindy\Mail;
 
@@ -75,6 +70,7 @@ use Mindy\Utils\RenderTrait;
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
+ * @package Mindy\Mail
  */
 class Mailer implements MailerInterface
 {

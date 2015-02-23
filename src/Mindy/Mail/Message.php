@@ -1,14 +1,9 @@
 <?php
-/**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
 
 namespace Mindy\Mail;
+
 use Mindy\Helper\Traits\Accessors;
 use Mindy\Helper\Traits\Configurator;
-
 
 /**
  * Message implements a message class based on SwiftMailer.
@@ -22,6 +17,7 @@ use Mindy\Helper\Traits\Configurator;
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
+ * @package Mindy\Mail
  */
 class Message
 {

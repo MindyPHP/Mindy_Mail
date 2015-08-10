@@ -2,7 +2,7 @@
     "name": "mindy/mail",
     "homepage": "https://github.com/studio107/Mindy_Mail",
     "type": "library",
-    "version": "0.2",
+    "version": "0.3",
     "license": "MIT",
     "autoload": {
         "psr-4": {

@@ -327,7 +327,7 @@ class Mailer implements MailerInterface
      * of the new message instance.
      * @return MessageInterface message instance.
      */
-    protected function createMessage()
+    public function createMessage()
     {
         $config = $this->messageConfig;
         if (!array_key_exists('class', $config)) {

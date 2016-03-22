@@ -1,8 +1,8 @@
 {
     "name": "mindy/mail",
-    "homepage": "https://github.com/studio107/Mindy_Mail",
+    "homepage": "https://github.com/MindyPHP/Mindy_Mail",
     "type": "library",
-    "version": "0.3",
+    "version": "1.0",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -26,6 +26,6 @@
         "role": "Developer"
     }],
     "support": {
-        "issues": "https://github.com/studio107/Mindy_Mail/issues?state=open"
+        "issues": "https://github.com/MindyPHP/Mindy_Mail/issues?state=open"
     }
 }

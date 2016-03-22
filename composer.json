@@ -11,10 +11,10 @@
     },
     "require": {
         "php": ">=5.4",
-        "mindy/logger": "1.*",
-        "mindy/helper": "0.*",
+        "mindy/logger": "*",
+        "mindy/helper": "*",
         "swiftmailer/swiftmailer": "@stable",
-        "mindy/utils": "0.*"
+        "mindy/utils": "*"
     },
     "require-dev": {
         "satooshi/php-coveralls": "dev-master"

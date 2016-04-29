@@ -13,8 +13,7 @@
         "php": ">=5.4",
         "mindy/logger": "*",
         "mindy/helper": "*",
-        "swiftmailer/swiftmailer": "@stable",
-        "mindy/utils": "*"
+        "swiftmailer/swiftmailer": "@stable"
     },
     "require-dev": {
         "satooshi/php-coveralls": "dev-master"

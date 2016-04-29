@@ -7,7 +7,7 @@ use Mindy\Helper\Alias;
 use Mindy\Helper\Creator;
 use Mindy\Helper\Traits\Accessors;
 use Mindy\Helper\Traits\Configurator;
-use Mindy\Utils\RenderTrait;
+use Mindy\Helper\Traits\RenderTrait;
 
 /**
  * Mailer implements a mailer based on SwiftMailer.

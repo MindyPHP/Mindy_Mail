@@ -2,7 +2,6 @@
     "name": "mindy/mail",
     "homepage": "https://github.com/MindyPHP/Mindy_Mail",
     "type": "library",
-    "version": "1.0",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -10,9 +9,6 @@
         }
     },
     "require": {
-        "php": ">=5.4",
-        "mindy/logger": "*",
-        "mindy/helper": "*",
         "swiftmailer/swiftmailer": "@stable"
     },
     "require-dev": {
